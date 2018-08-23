@@ -8,19 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="10,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"><Run Text="AMPLITUD"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="10,27,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_amplitud" HorizontalAlignment="Left" Height="24" Margin="10,27,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="10,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"><Run Text="FASE"/><Run Text=":"/><Run Text="&#x9;&#x9;"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="10,106,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_fase" HorizontalAlignment="Left" Height="31" Margin="10,106,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="10,153,0,0" TextWrapping="Wrap" Text="FRECUENCIA:" VerticalAlignment="Top" Width="124"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="10,204,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_frecuencia" HorizontalAlignment="Left" Height="25" Margin="10,204,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="161,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="TIEMPO INICIAL:"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="161,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_tiempoinicial" HorizontalAlignment="Left" Height="24" Margin="161,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="161,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"><Run Text="TIEMPO FINAL"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_tiempofinal" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="46" Margin="161,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="FRECUENCIA DE MUESTREO:"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="161,204,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="124" FontSize="20" TextChanged="TextBox_TextChanged"/>
-        <Button Content="GRAFICAR" HorizontalAlignment="Left" Height="20" Margin="303,37,0,0" VerticalAlignment="Top" Width="63"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="149" Margin="0,260,0,0" VerticalAlignment="Top" Width="792" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+        <TextBox x:Name="txt_frecuenciademuestreo" HorizontalAlignment="Left" Height="25" Margin="161,204,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <Button x:Name="btngraficar" Content="GRAFICAR" HorizontalAlignment="Left" Height="20" Margin="303,37,0,0" VerticalAlignment="Top" Width="63" Click="btngraficar_click"/>
+        <ScrollViewer x:Name="contenedor" HorizontalAlignment="Left" Height="149" Margin="0,260,0,0" VerticalAlignment="Top" Width="792" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
 
             <Polyline Stroke="BlueViolet" StrokeThickness="2" Name="plnGrafica" Height="162" Width="792" />
 

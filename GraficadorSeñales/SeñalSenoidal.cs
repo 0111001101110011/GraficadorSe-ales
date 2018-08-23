@@ -29,7 +29,7 @@ namespace GraficadorSeñales
             Frecuencia = frecuencia;
         }
 
-        public double evaluar(double tiempo)
+        public double Evaluar(double tiempo)
         {
             double resultado;
             resultado = Amplitud * Math.Sin((2 * Math.PI * Frecuencia * tiempo) + Fase);
