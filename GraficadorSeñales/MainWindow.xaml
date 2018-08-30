@@ -19,12 +19,20 @@
         <TextBox x:Name="txt_tiempofinal" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="46" Margin="161,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="FRECUENCIA DE MUESTREO:"/>
         <TextBox x:Name="txt_frecuenciademuestreo" HorizontalAlignment="Left" Height="25" Margin="161,204,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="124" FontSize="20"/>
-        <Button x:Name="btngraficar" Content="GRAFICAR" HorizontalAlignment="Left" Height="20" Margin="303,37,0,0" VerticalAlignment="Top" Width="63" Click="btngraficar_click"/>
-        <ScrollViewer x:Name="contenedor" HorizontalAlignment="Left" Height="149" Margin="0,260,0,0" VerticalAlignment="Top" Width="792" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+        <Button x:Name="btngraficar" Content="GRAFICAR SEÑAL SENOIDAL" HorizontalAlignment="Left" Height="24" Margin="312,34,0,0" VerticalAlignment="Top" Width="170" Click="btngraficar_click"/>
+        <ScrollViewer x:Name="contenedor" HorizontalAlignment="Left" Height="149" Margin="-5,275,0,-5" VerticalAlignment="Top" Width="792" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
 
             <Polyline Stroke="BlueViolet" StrokeThickness="2" Name="plnGrafica" Height="162" Width="792" />
 
         </ScrollViewer>
+        <TextBox x:Name="txt_tiempoinicial_Copy" HorizontalAlignment="Left" Height="24" Margin="161,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="586,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="TIEMPO INICIAL:"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="586,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"><Run Text="TIEMPO FINAL"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txt_tiempofinalRampa" HorizontalAlignment="Left" Height="23" Margin="586,187,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="46" Margin="586,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="FRECUENCIA DE MUESTREO:"/>
+        <TextBox x:Name="txt_frecuenciademuestreoRampa" HorizontalAlignment="Left" Height="25" Margin="586,277,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <TextBox x:Name="txt_tiempoinicialRampa" HorizontalAlignment="Left" Height="24" Margin="586,106,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="124" FontSize="20"/>
+        <Button x:Name="btnGraficarRampa" Content="GRAFICAR SEÑAL RAMPA" HorizontalAlignment="Left" Height="23" Margin="571,39,0,0" VerticalAlignment="Top" Width="157" Click="btnGraficarRampa_Click"/>
 
     </Grid>
 </Window>

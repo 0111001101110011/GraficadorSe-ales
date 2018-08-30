@@ -46,25 +46,66 @@ namespace GraficadorSeñales
 
                 if (Math.Abs(valorMuestra) > señal.AmplitudMaxima)
                 {
-                    señal.AmplitudMaxima =Math.Abs(valorMuestra);
+                    señal.AmplitudMaxima = Math.Abs(valorMuestra);
                         
                 }
 
                 señal.Muestras.Add(new Muestra(i, señal.Evaluar(i)));
 
-                //Recorrer una colección o arreglo
-                foreach(Muestra muestra in señal.Muestras)
-                {
-                    plnGrafica.Points.Add(new Point
-                   (muestra.X * contenedor.Width, (muestra.Y * ((contenedor.Height / 2.0) + (contenedor.Height / 2))
-                   )));
-                }
-                
-                
-
-
+ 
             }
 
+            
+
+            //Recorrer una colección o arreglo
+            foreach (Muestra muestra in señal.Muestras)
+            {
+                plnGrafica.Points.Add(new Point
+               (muestra.X * contenedor.Width, (muestra.Y * ((contenedor.Height / 2.0) + (contenedor.Height / 2))
+               )));
+            }
+        }
+
+        private void btnGraficarRampa_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                
+                double tiempoinicial = double.Parse(txt_tiempoinicial.Text);
+                double tiempofinal = double.Parse(txt_tiempofinal.Text);
+                double frecuenciademuestreo = double.Parse(txt_frecuenciademuestreo.Text);
+
+                SeñalRampa señal = new SeñalRampa();
+
+
+                plnGrafica.Points.Clear();
+
+                double periodomuestreo = 1 / frecuenciademuestreo;
+
+                for (double i = tiempoinicial; i <= tiempofinal; i += periodomuestreo)
+                {
+                    double valorMuestra = señal.Evaluar(i);
+
+                    if (Math.Abs(valorMuestra) > señal.AmplitudMaxima)
+                    {
+                        señal.AmplitudMaxima = Math.Abs(valorMuestra);
+
+                    }
+
+                    señal.Muestras.Add(new Muestra(i, señal.Evaluar(i)));
+
+
+                }
+
+
+
+                //Recorrer una colección o arreglo
+                foreach (Muestra muestra in señal.Muestras)
+                {
+                    plnGrafica.Points.Add(new Point
+                   (muestra.X * contenedor.Width, (muestra.Y * ((contenedor.Height / 2.0)-30) *-1 + (contenedor.Height / 2))
+                   ));
+                }
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ namespace GraficadorSeñales
         {
             X = x;
             Y = y;
+
         }
 
         //CONSTRUCTOR SIN PARAMETROS 
