@@ -8,28 +8,23 @@ namespace GraficadorSeñales
 {
     class Muestra
     {
-        //EL INSTANTE DEL TIEMPO EN QUE FUE TOMADA LA MUESTRA
+        // El instante del tiempo en que fue tomada la muestra
         public double X { get; set; }
-        //EL VALOR DE ESA MUESTRA EN ESE INSTANTE
+        // El valor de esa muestra en dicho instante
         public double Y { get; set; }
 
-        //CONSTRUCTOR QUE INICIALIZA VALORES
+        // Constructor que inicializa valores
         public Muestra(double x, double y)
         {
             X = x;
             Y = y;
-
         }
 
-        //CONSTRUCTOR SIN PARAMETROS 
-        
+        // Constructor sin parámetros
         public Muestra()
         {
             X = 0.0;
             Y = 0.0;
         }
-
-        
-
     }
 }
