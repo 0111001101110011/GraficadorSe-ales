@@ -23,17 +23,21 @@
         <TextBox x:Name="txt_TiempoFinal" HorizontalAlignment="Left" Height="23" Margin="566,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="lbl_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Margin="468,78,0,0" TextWrapping="Wrap" Text="Frecuencia de Muestreo" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Height="23" Margin="468,99,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="BotonGraficar" Content="Grafica Senoidal" HorizontalAlignment="Left" Margin="371,132,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Click"/>
-        <ScrollViewer x:Name="scrContenedor" HorizontalAlignment="Left" Height="189" Margin="53,35,0,0" VerticalAlignment="Top" Width="739" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+        <Button x:Name="BotonGraficar" Content="Grafica" HorizontalAlignment="Left" Margin="468,138,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Click"/>
+        <ScrollViewer x:Name="scrContenedor" HorizontalAlignment="Left" Height="189" Margin="37,11,0,0" VerticalAlignment="Top" Width="739" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>
                 <Polyline Stroke="CornflowerBlue"  StrokeThickness="2" Name="plnGrafica"/>
                 <Polyline Stroke="Black" StrokeThickness="0.5" Name="plnEjeX"/>
                 <Polyline Stroke="Black" StrokeThickness="0.5" Name="plnEjeY"/>
             </Grid>
         </ScrollViewer>
-        <Button x:Name="BotonGraficar_Rampa" Content="Grafica Rampa" HorizontalAlignment="Left" Margin="574,132,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Rampa_Click"/>
-        <TextBlock x:Name="lbl_AmplitudMaxima" HorizontalAlignment="Left" Margin="26,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="lbl_AmplitudMinima" HorizontalAlignment="Left" Margin="26,190,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="lbl_AmplitudCero" HorizontalAlignment="Left" Margin="26,119,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="lbl_AmplitudMaxima" HorizontalAlignment="Left" Margin="10,15,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="lbl_AmplitudMinima" HorizontalAlignment="Left" Margin="10,166,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="lbl_AmplitudCero" Margin="10,95,773,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="TipoSeñal" HorizontalAlignment="Left" Margin="295,109,0,0" TextWrapping="Wrap" Text="Tipo de Señal" VerticalAlignment="Top" Height="23" Width="118"/>
+        <ComboBox SelectedIndex="0" x:Name="cbTipoSeñal" HorizontalAlignment="Left" Margin="279,138,0,0" VerticalAlignment="Top" Width="134">
+            <ComboBoxItem>Opcion uno</ComboBoxItem>
+            <ComboBoxItem>Opcion dos</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
