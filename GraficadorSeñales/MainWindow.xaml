@@ -8,36 +8,32 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="195*"/>
-            <RowDefinition Height="224*"/>
+            <RowDefinition/>
+            <RowDefinition Height="224"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="lbl_Amplitud" HorizontalAlignment="Left" Margin="83,13,0,0" TextWrapping="Wrap" Text="Amplitud" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Amplitud" HorizontalAlignment="Left" Height="23" Margin="83,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_Fase" HorizontalAlignment="Left" Margin="83,69,0,0" TextWrapping="Wrap" Text="Fase" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Fase" HorizontalAlignment="Left" Height="23" Margin="83,90,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_Frecuencia" HorizontalAlignment="Left" Margin="83,132,0,0" TextWrapping="Wrap" Text="Frecuencia" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Frecuencia" HorizontalAlignment="Left" Height="23" Margin="83,153,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_TiempoInicial" HorizontalAlignment="Left" Margin="386,13,0,0" TextWrapping="Wrap" Text="Tiempo Inicial" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_TiempoInicial" HorizontalAlignment="Left" Height="23" Margin="386,34,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_TiempoFinal" HorizontalAlignment="Left" Margin="566,13,0,0" TextWrapping="Wrap" Text="Tiempo Final" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_TiempoFinal" HorizontalAlignment="Left" Height="23" Margin="566,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Margin="468,78,0,0" TextWrapping="Wrap" Text="Frecuencia de Muestreo" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Height="23" Margin="468,99,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="BotonGraficar" Content="Grafica" HorizontalAlignment="Left" Margin="468,138,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Click"/>
-        <ScrollViewer x:Name="scrContenedor" HorizontalAlignment="Left" Height="189" Margin="37,11,0,0" VerticalAlignment="Top" Width="739" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+        <TextBlock x:Name="lbl_TiempoInicial" HorizontalAlignment="Left" Margin="238,13,0,0" TextWrapping="Wrap" Text="Tiempo Inicial" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_TiempoInicial" HorizontalAlignment="Left" Height="23" Margin="238,34,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="lbl_TiempoFinal" HorizontalAlignment="Left" Margin="418,13,0,0" TextWrapping="Wrap" Text="Tiempo Final" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_TiempoFinal" HorizontalAlignment="Left" Height="23" Margin="418,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="lbl_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Margin="312,78,0,0" TextWrapping="Wrap" Text="Frecuencia de Muestreo" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Height="23" Margin="312,99,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="BotonGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="598,98,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Click"/>
+        <ScrollViewer x:Name="scrContenedor" HorizontalAlignment="Left" Height="224" Margin="53,0,0,0" VerticalAlignment="Top" Width="739" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>
-                <Polyline Stroke="CornflowerBlue"  StrokeThickness="2" Name="plnGrafica"/>
-                <Polyline Stroke="Black" StrokeThickness="0.5" Name="plnEjeX"/>
-                <Polyline Stroke="Black" StrokeThickness="0.5" Name="plnEjeY"/>
+                <Polyline Stroke="Blue" StrokeThickness="2" Name="plnGrafica"/>
+                <Polyline Stroke="Black" StrokeThickness="0.3" Name="plnEjeX"/>
+                <Polyline Stroke="Black" StrokeThickness="0.3" Name="plnEjeY"/>
             </Grid>
         </ScrollViewer>
-        <TextBlock x:Name="lbl_AmplitudMaxima" HorizontalAlignment="Left" Margin="10,15,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="lbl_AmplitudMinima" HorizontalAlignment="Left" Margin="10,166,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="lbl_AmplitudCero" Margin="10,95,773,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="TipoSeñal" HorizontalAlignment="Left" Margin="295,109,0,0" TextWrapping="Wrap" Text="Tipo de Señal" VerticalAlignment="Top" Height="23" Width="118"/>
-        <ComboBox SelectedIndex="0" x:Name="cbTipoSeñal" HorizontalAlignment="Left" Margin="279,138,0,0" VerticalAlignment="Top" Width="134">
-            <ComboBoxItem>Opcion uno</ComboBoxItem>
-            <ComboBoxItem>Opcion dos</ComboBoxItem>
+        <TextBlock x:Name="lbl_AmplitudMaxima" HorizontalAlignment="Left" Margin="26,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="lbl_AmplitudMinima" HorizontalAlignment="Left" Margin="26,186,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="lbl_AmplitudCero" HorizontalAlignment="Left" Margin="26,99,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
+        <StackPanel x:Name="panelConfiguracion" HorizontalAlignment="Left" Height="189" Margin="-3,-4,0,0" VerticalAlignment="Top" Width="177"/>
+        <ComboBox x:Name="cb_TipoSeñal" SelectedIndex="0" HorizontalAlignment="Left" Margin="312,158,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cb_TipoSeñal_SelectionChanged">
+            <ComboBoxItem>Señal Senoidal</ComboBoxItem>
+            <ComboBoxItem>Señal Rampa</ComboBoxItem>
+            <ComboBoxItem>Señal Exponencial</ComboBoxItem>
         </ComboBox>
+        <TextBlock x:Name="lbl_ComboBox" HorizontalAlignment="Left" Margin="312,140,0,0" TextWrapping="Wrap" Text="Tipo de Señal" VerticalAlignment="Top"/>
     </Grid>
 </Window>

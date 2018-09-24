@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SeñalRampa : Señal
+    class SenalExponencial : Señal
     {
-        public SeñalRampa()
+
+        public SeñalExponencial()
         {
+            Muestras = new List<Muestra>();
+            AmplitudMaxima = 0.0;
+            Alpha = 0;
+        }
+
+        public SeñalExponencial(double alpha)
+        {
+            Alpha = alpha;
             Muestras = new List<Muestra>();
             AmplitudMaxima = 0.0;
         }
@@ -17,12 +26,10 @@ namespace GraficadorSeñales
         override public double evaluar(double tiempo)
         {
             double resultado;
-            resultado = tiempo;
-            if (resultado < 0)
-            {
-                resultado = 0;
-            }
+            resultado = Math.Exp(Alpha * tiempo);
+
             return resultado;
         }
+
     }
 }
