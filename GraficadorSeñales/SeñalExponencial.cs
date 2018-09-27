@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SenalExponencial : Señal
+    /*class SenalExponencial : Señal
     {
 
         public SeñalExponencial()
@@ -32,4 +32,5 @@ namespace GraficadorSeñales
         }
 
     }
+    */
 }

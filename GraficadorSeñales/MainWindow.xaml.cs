@@ -63,7 +63,7 @@ namespace GraficadorSeñales
             {
                 // Señal Senoidal
                 case 0:
-                    double amplitud = double.Parse(((ConfiguracionSeñalSenoidal)panelConfiguracion.Children[0]).txt_Amplitud.Text);
+                    double amplitud = double.Parse(((ConfiguracionSeñalSenoidal)(panelConfiguracion.Children[0])).txt_Amplitud.Text);
                     double fase = double.Parse(((ConfiguracionSeñalSenoidal)(panelConfiguracion.Children[0])).txt_Fase.Text);
                     double frecuencia = double.Parse(((ConfiguracionSeñalSenoidal)(panelConfiguracion.Children[0])).txt_Frecuencia.Text);
 
@@ -91,6 +91,9 @@ namespace GraficadorSeñales
             señal.FrecuenciaMuestreo = frecuenciaMuestreo;
 
             señal.construirSeñalDigital();
+
+            //Escalar
+            double factorEscala = double.Parse(txt_EscalaAmplitud.Text);
 
             plnGrafica.Points.Clear();
 
@@ -132,6 +135,22 @@ namespace GraficadorSeñales
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void cb_EscalaAmplitud_Checked(object sender, RoutedEventArgs e)
+        {
+            if (cb_EscalaAmplitud_Checked = true)
+            {
+                txt_EscalaAmplitud ==
+            }
+        }
+
+        private void cb_DesplazamientoenY_Checked(object sender, RoutedEventArgs e)
+        {
+            if (cb_DesplazamientoenY.Checked == )
+            {
+                txt_DesplazamientoenY = 
             }
         }
     }

@@ -36,5 +36,18 @@ namespace GraficadorSeñales
             }
 
         }
+
+        public void escalar(double factor)
+        {
+            foreach(Muestra muestra in Muestras)
+            {
+                muestra.Y *= factor; 
+
+            }
+        }
+
     }
 }
+
+
+
