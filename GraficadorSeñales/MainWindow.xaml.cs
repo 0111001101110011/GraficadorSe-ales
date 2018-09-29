@@ -23,32 +23,6 @@ namespace GraficadorSeñales
         public MainWindow()
         {
             InitializeComponent();
-
-            /*plnGrafica.Points.Add(new Point(0, 10));
-            plnGrafica.Points.Add(new Point(50, 20));
-            plnGrafica.Points.Add(new Point(150, 10));
-            plnGrafica.Points.Add(new Point(200, 50));
-            plnGrafica.Points.Add(new Point(250, 0));
-            plnGrafica.Points.Add(new Point(300, 100));
-            plnGrafica.Points.Add(new Point(350, 30));
-            plnGrafica.Points.Add(new Point(450, 50));
-            plnGrafica.Points.Add(new Point(550, 100));
-            plnGrafica.Points.Add(new Point(650, 10));
-            plnGrafica.Points.Add(new Point(750, 25));
-            plnGrafica.Points.Add(new Point(850, 120));
-            plnGrafica.Points.Add(new Point(950, 30));
-            plnGrafica.Points.Add(new Point(1050, 54));*/
-
-
-            /*
-            SeñalSenoidal señal = new SeñalSenoidal();
-
-            for (double i = 0; i <= 1; i += 0.0001)
-            {
-                Console.WriteLine(señal.evaluar(i));
-            }
-            Console.ReadLine();
-            */
         }
 
         private void BotonGraficar_Click(object sender, RoutedEventArgs e)
@@ -75,11 +49,11 @@ namespace GraficadorSeñales
                     señal = new SeñalRampa();
                     break;
 
-                // Señal xxxxx
-                /* case 2:
-                    señal = new Señalyyyyy();
+                // Señal Exponencial
+                case 2:
+                    double alpha = double.Parse(((ConfiguracionSeñalExponencial)(panelConfiguracion.Children[0])).txt_Alpha.Text);
+                    señal = new SeñalExponencial(alpha);
                     break;
-                */
 
                 default:
                     señal = null;
@@ -92,8 +66,22 @@ namespace GraficadorSeñales
 
             señal.construirSeñalDigital();
 
-            //Escalar
-            double factorEscala = double.Parse(txt_EscalaAmplitud.Text);
+            // Escalar
+            if ((bool)ckb_Escala.IsChecked)
+            {
+                double factorEscala = double.Parse(txt_EscalaAmplitud.Text);
+                señal.escalar(factorEscala);
+            }
+
+            // Desplazar
+            if ((bool)ckb_Desplazamiento.IsChecked)
+            {
+                double factorDesplazamiento = double.Parse(txt_Desplazamiento.Text);
+                señal.desplazar(factorDesplazamiento);
+            }
+
+            // Actualizar
+            señal.actualizarAmplitudMaxima();
 
             plnGrafica.Points.Clear();
 
@@ -135,23 +123,13 @@ namespace GraficadorSeñales
                     break;
                 default:
                     break;
-            }
-        }
 
-        private void cb_EscalaAmplitud_Checked(object sender, RoutedEventArgs e)
-        {
-            if (cb_EscalaAmplitud_Checked = true)
-            {
-                txt_EscalaAmplitud ==
-            }
-        }
-
-        private void cb_DesplazamientoenY_Checked(object sender, RoutedEventArgs e)
-        {
-            if (cb_DesplazamientoenY.Checked == )
-            {
-                txt_DesplazamientoenY = 
+                // Señal Senoidal
+                case 2:
+                    panelConfiguracion.Children.Add(new ConfiguracionSeñalExponencial());
+                    break;
             }
         }
     }
 }
+

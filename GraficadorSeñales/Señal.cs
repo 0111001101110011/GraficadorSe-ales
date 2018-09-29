@@ -16,6 +16,7 @@ namespace GraficadorSeñales
         public double FrecuenciaMuestreo { get; set; }
         public double TiempoInicial { get; set; }
         public double TiempoFinal { get; set; }
+        public double Alpha { get; set; }
 
         abstract public double evaluar(double tiempo);
 
@@ -34,20 +35,35 @@ namespace GraficadorSeñales
 
                 Muestras.Add(new Muestra(i, valorMuestra));
             }
-
         }
+
 
         public void escalar(double factor)
         {
-            foreach(Muestra muestra in Muestras)
+            foreach (Muestra muestra in Muestras)
             {
-                muestra.Y *= factor; 
-
+                muestra.Y *= factor;
             }
         }
 
+        public void actualizarAmplitudMaxima()
+        {
+            AmplitudMaxima = 0;
+            foreach (Muestra muestra in Muestras)
+            {
+                if (Math.Abs(muestra.Y) > AmplitudMaxima)
+                {
+                    AmplitudMaxima = Math.Abs(muestra.Y);
+                }
+            }
+        }
+
+        public void desplazar(double factor)
+        {
+            foreach (Muestra muestra in Muestras)
+            {
+                muestra.Y += factor;
+            }
+        }
     }
 }
-
-
-
