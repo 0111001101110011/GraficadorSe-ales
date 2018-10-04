@@ -20,6 +20,8 @@ namespace GraficadorSeñales
             Y = y;
         }
 
+       
+
         // Constructor sin parámetros
         public Muestra()
         {

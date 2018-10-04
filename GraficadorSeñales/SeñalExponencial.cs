@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    /*class SenalExponencial : Señal
+    class SenalExponencial : Señal
     {
 
-        public SeñalExponencial()
+        public SenalExponencial()
         {
             Muestras = new List<Muestra>();
             AmplitudMaxima = 0.0;
             Alpha = 0;
         }
 
-        public SeñalExponencial(double alpha)
+        public SenalExponencial(double alpha)
         {
             Alpha = alpha;
             Muestras = new List<Muestra>();
@@ -32,5 +32,4 @@ namespace GraficadorSeñales
         }
 
     }
-    */
 }

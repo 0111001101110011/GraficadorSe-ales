@@ -37,6 +37,21 @@ namespace GraficadorSeñales
             }
         }
 
+        public void Truncar(double n)
+        {
+            foreach (Muestra muestra in Muestras)
+            {
+                if (muestra.Y > n)
+                {
+                    muestra.Y = n;
+                }
+                else if (muestra.Y < -n)
+                {
+                    muestra.Y = -n;
+                }
+            }
+        }
+           
 
         public void escalar(double factor)
         {

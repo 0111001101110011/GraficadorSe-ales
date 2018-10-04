@@ -52,7 +52,7 @@ namespace GraficadorSeñales
                 // Señal Exponencial
                 case 2:
                     double alpha = double.Parse(((ConfiguracionSeñalExponencial)(panelConfiguracion.Children[0])).txt_Alpha.Text);
-                    señal = new SeñalExponencial(alpha);
+                    señal = new SenalExponencial(alpha);
                     break;
 
                 default:
@@ -78,6 +78,14 @@ namespace GraficadorSeñales
             {
                 double factorDesplazamiento = double.Parse(txt_Desplazamiento.Text);
                 señal.desplazar(factorDesplazamiento);
+            }
+
+            //Truncar 
+            if ((bool) ckb_Truncar.IsChecked)
+            {
+                double n = double.Parse(txt_Truncar.Text);
+                señal.Truncar(n);
+
             }
 
             // Actualizar

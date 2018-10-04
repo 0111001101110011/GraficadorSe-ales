@@ -15,8 +15,8 @@
         <TextBox x:Name="txt_TiempoInicial" HorizontalAlignment="Left" Height="23" Margin="238,34,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="lbl_TiempoFinal" HorizontalAlignment="Left" Margin="418,13,0,0" TextWrapping="Wrap" Text="Tiempo Final" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_TiempoFinal" HorizontalAlignment="Left" Height="23" Margin="418,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="lbl_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Margin="312,78,0,0" TextWrapping="Wrap" Text="Frecuencia de Muestreo" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Height="23" Margin="312,99,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="137"/>
+        <TextBlock x:Name="lbl_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Margin="414,70,0,0" TextWrapping="Wrap" Text="Frecuencia de Muestreo" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_FrecuenciaDeMuestreo" HorizontalAlignment="Left" Height="23" Margin="414,91,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="137"/>
         <Button x:Name="BotonGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="598,158,0,0" VerticalAlignment="Top" Width="158" Click="BotonGraficar_Click"/>
         <ScrollViewer x:Name="scrContenedor" HorizontalAlignment="Left" Height="224" Margin="53,0,0,0" VerticalAlignment="Top" Width="739" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>
@@ -29,17 +29,20 @@
         <TextBlock x:Name="lbl_AmplitudMinima" HorizontalAlignment="Left" Margin="26,186,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
         <TextBlock x:Name="lbl_AmplitudCero" HorizontalAlignment="Left" Margin="26,99,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="16"/>
         <StackPanel x:Name="panelConfiguracion" HorizontalAlignment="Left" Height="189" Margin="-3,-4,0,0" VerticalAlignment="Top" Width="177"/>
-        <ComboBox x:Name="cb_TipoSeñal" SelectedIndex="0" HorizontalAlignment="Left" Margin="312,158,0,0" VerticalAlignment="Top" Width="137" SelectionChanged="cb_TipoSeñal_SelectionChanged">
+        <ComboBox x:Name="cb_TipoSeñal" SelectedIndex="0" HorizontalAlignment="Left" Margin="414,150,0,0" VerticalAlignment="Top" Width="137" SelectionChanged="cb_TipoSeñal_SelectionChanged">
             <ComboBoxItem>Señal Senoidal</ComboBoxItem>
             <ComboBoxItem>Señal Rampa</ComboBoxItem>
             <ComboBoxItem>Señal Exponencial</ComboBoxItem>
         </ComboBox>
-        <TextBlock x:Name="lbl_ComboBox" HorizontalAlignment="Left" Margin="312,140,0,0" TextWrapping="Wrap" Text="Tipo de Señal" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lbl_ComboBox" HorizontalAlignment="Left" Margin="414,132,0,0" TextWrapping="Wrap" Text="Tipo de Señal" VerticalAlignment="Top"/>
         <TextBlock x:Name="lbl_EscalaAmplitud" HorizontalAlignment="Left" Margin="618,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"><Run Text="Escala de amplitud"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="txt_EscalaAmplitud" HorizontalAlignment="Left" Height="23" Margin="618,34,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="lbl_Desplazamiento" HorizontalAlignment="Left" Margin="618,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21" Text="Desplazamiento en y"/>
         <TextBox x:Name="txt_Desplazamiento" HorizontalAlignment="Left" Height="23" Margin="618,99,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="ckb_Escala" Content="" Margin="747,38,-1,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ckb_Desplazamiento" Content="" HorizontalAlignment="Left" Margin="746,103,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lbl_Truncar" HorizontalAlignment="Left" Height="16" Margin="238,70,0,0" TextWrapping="Wrap" Text="Truncar" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_Truncar" HorizontalAlignment="Left" Height="18" Margin="235,99,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="123"/>
+        <CheckBox x:Name="ckb_Truncar" Content="CheckBox" HorizontalAlignment="Left" Margin="363,103,0,0" VerticalAlignment="Top" Width="17"/>
     </Grid>
 </Window>
