@@ -101,8 +101,8 @@ namespace GraficadorSeñales
                     plnGrafica.Points.Add(new Point((muestra.X - tiempoInicial) * scrContenedor.Width, (muestra.Y / señal.AmplitudMaxima * ((scrContenedor.Height / 2) - 30) * -1 + (scrContenedor.Height / 2))));
                 }
 
-                lbl_AmplitudMaxima.Text = señal.AmplitudMaxima.ToString();
-                lbl_AmplitudMinima.Text = "-" + señal.AmplitudMaxima.ToString();
+                lbl_AmplitudMaxima.Text = señal.AmplitudMaxima.ToString("F");
+                lbl_AmplitudMinima.Text = "-" + señal.AmplitudMaxima.ToString("F");
             }
 
             // Línea del Eje X
@@ -137,6 +137,11 @@ namespace GraficadorSeñales
                     panelConfiguracion.Children.Add(new ConfiguracionSeñalExponencial());
                     break;
             }
+        }
+
+        private void cb_TipoSeñal_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
