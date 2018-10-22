@@ -37,7 +37,7 @@ namespace GraficadorSeñales
             }
         }
 
-        public void Truncar(double n)
+        public void truncar (double n)
         {
             foreach (Muestra muestra in Muestras)
             {
@@ -51,11 +51,10 @@ namespace GraficadorSeñales
                 }
             }
         }
-           
 
-        public void escalar(double factor)
+        public void escalar (double factor)
         {
-            foreach (Muestra muestra in Muestras)
+            foreach(Muestra muestra in Muestras)
             {
                 muestra.Y *= factor;
             }
@@ -64,7 +63,7 @@ namespace GraficadorSeñales
         public void actualizarAmplitudMaxima()
         {
             AmplitudMaxima = 0;
-            foreach (Muestra muestra in Muestras)
+            foreach(Muestra muestra in Muestras)
             {
                 if (Math.Abs(muestra.Y) > AmplitudMaxima)
                 {
@@ -79,6 +78,28 @@ namespace GraficadorSeñales
             {
                 muestra.Y += factor;
             }
+        }
+
+        public static Señal suma(Señal sumando1, Señal sumando2)
+        {
+            SeñalPersonalizada resultado = new SeñalPersonalizada();
+
+            // Sumandos de la Señal 1
+            resultado.TiempoInicial = sumando1.TiempoInicial;
+            resultado.TiempoFinal = sumando1.TiempoFinal;
+            resultado.FrecuenciaMuestreo = sumando1.FrecuenciaMuestreo;
+
+            int indice = 0;
+            foreach (Muestra muestra in sumando1.Muestras)
+            {
+                Muestra muestraResultado = new Muestra();
+                muestraResultado.X = muestra.X;
+                muestraResultado.Y = muestra.Y + sumando2.Muestras[indice].Y;
+                indice++;
+                resultado.Muestras.Add(muestraResultado);
+            }
+            
+            return resultado;
         }
     }
 }

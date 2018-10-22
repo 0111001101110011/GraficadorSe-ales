@@ -18,7 +18,7 @@ namespace GraficadorSeñales
         {
             double resultado;
             resultado = tiempo;
-            if (resultado < 0)
+            if(resultado < 0)
             {
                 resultado = 0;
             }

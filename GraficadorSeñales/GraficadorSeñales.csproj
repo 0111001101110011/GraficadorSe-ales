@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCA42054-9684-4311-AB24-73AEF69E214E}</ProjectGuid>
+    <ProjectGuid>{023B1CB7-89BA-41CF-BAA7-9FE5A55C1A20}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GraficadorSeñales</RootNamespace>
     <AssemblyName>GraficadorSeñales</AssemblyName>
@@ -60,9 +60,10 @@
     <Compile Include="ConfiguracionSeñalSenoidal.xaml.cs">
       <DependentUpon>ConfiguracionSeñalSenoidal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SeñalExponencial.cs" />
     <Compile Include="Muestra.cs" />
     <Compile Include="Señal.cs" />
-    <Compile Include="SeñalExponencial.cs" />
+    <Compile Include="SeñalPersonalizada.cs" />
     <Compile Include="SeñalRampa.cs" />
     <Compile Include="SeñalSenoidal.cs" />
     <Page Include="ConfiguracionSeñalExponencial.xaml">

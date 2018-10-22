@@ -8,7 +8,6 @@ namespace GraficadorSeñales
 {
     class SeñalSenoidal : Señal
     {
-
         public SeñalSenoidal()
         {
             Amplitud = 1;

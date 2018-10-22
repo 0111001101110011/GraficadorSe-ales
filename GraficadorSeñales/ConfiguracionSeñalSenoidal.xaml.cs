@@ -21,7 +21,7 @@ namespace GraficadorSeñales
     public partial class ConfiguracionSeñalSenoidal : UserControl
     {
         public ConfiguracionSeñalSenoidal()
-        {   
+        {
             InitializeComponent();
         }
     }
