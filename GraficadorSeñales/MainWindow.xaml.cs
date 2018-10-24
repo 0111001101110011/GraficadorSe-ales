@@ -100,7 +100,7 @@ namespace GraficadorSeñales
             señal_2.TiempoInicial = tiempoInicial;
             señal_2.TiempoFinal = tiempoFinal;
             señal_2.FrecuenciaMuestreo = frecuenciaMuestreo;
-            
+
             señal.construirSeñalDigital();
             señal_2.construirSeñalDigital();
 
@@ -124,7 +124,7 @@ namespace GraficadorSeñales
                 señal.escalar(factorEscala);
             }
 
-            if((bool)ckb_Escala_2.IsChecked)
+            if ((bool)ckb_Escala_2.IsChecked)
             {
                 double factorEscala = double.Parse(txt_EscalaAmplitud.Text);
                 señal.escalar(factorEscala);
@@ -148,7 +148,7 @@ namespace GraficadorSeñales
             señal_2.actualizarAmplitudMaxima();
 
             // Definición de la amplitud máxima en función de la señal de mayor amplitud
-            if(señal.AmplitudMaxima > señal_2.AmplitudMaxima)
+            if (señal.AmplitudMaxima > señal_2.AmplitudMaxima)
             {
                 amplitudMaxima = señal.AmplitudMaxima;
             }
@@ -205,7 +205,7 @@ namespace GraficadorSeñales
                 case 0:
                     panelConfiguracion.Children.Add(new ConfiguracionSeñalSenoidal());
                     break;
-                    
+
                 // Señal Rampa
                 case 1:
                     break;
@@ -214,7 +214,7 @@ namespace GraficadorSeñales
                 case 2:
                     panelConfiguracion.Children.Add(new ConfiguracionSeñalExponencial());
                     break;
-                    
+
                 default:
                     break;
             }
@@ -224,7 +224,7 @@ namespace GraficadorSeñales
         private void cb_TipoSeñal_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
         {
             panelConfiguracion_2.Children.Clear();
-            switch(cb_TipoSeñal_2.SelectedIndex)
+            switch (cb_TipoSeñal_2.SelectedIndex)
             {
                 // Señal Senoidal
                 case 0:
@@ -233,7 +233,7 @@ namespace GraficadorSeñales
 
                 // Señal Rampa
                 case 1:
-                    
+
                     break;
 
                 // Señal Exponencial
@@ -248,7 +248,51 @@ namespace GraficadorSeñales
 
         private void BotonOperacion_Click(object sender, RoutedEventArgs e)
         {
+            señalResultado = null;
+            switch (cb_TipoOperacion.SelectedIndex)
+            {
+                // Suma
+                case 0:
+                    señalResultado = Señal.suma(señal, señal_2);
+                    break;
 
+                // Multiplicación
+                case 1:
+                    señalResultado = Señal.multiplicacion(señal, señal_2);
+                    break;
+
+                default:
+
+                    break;
+            }
+
+            // Actualizar
+            señalResultado.actualizarAmplitudMaxima();
+
+            // Limpieza de polylines
+            plnGrafica_Resultado.Points.Clear();
+
+            // Impresión de la amplitud máxima en los labels de la ventana.
+            lbl_AmplitudMaxima_Resultado.Text = señalResultado.AmplitudMaxima.ToString("F");
+            lbl_AmplitudMinima_Resultado.Text = "-" + señalResultado.AmplitudMaxima.ToString("F");
+
+            if (señalResultado != null)
+            {
+                foreach (Muestra muestra in señalResultado.Muestras)
+                {
+                    plnGrafica_Resultado.Points.Add(new Point((muestra.X - señalResultado.TiempoInicial) * scrContenedor_Resultado.Width, (muestra.Y / señalResultado.AmplitudMaxima * ((scrContenedor_Resultado.Height / 2) - 30) * -1 + (scrContenedor_Resultado.Height / 2))));
+                }
+            }
+
+            // Línea del Eje X
+            plnEjeX_Resultado.Points.Clear();
+            plnEjeX_Resultado.Points.Add(new Point(0, scrContenedor_Resultado.Height / 2));
+            plnEjeX_Resultado.Points.Add(new Point((señalResultado.TiempoFinal - señalResultado.TiempoInicial) * scrContenedor_Resultado.Width, scrContenedor_Resultado.Height / 2));
+
+            // Línea del Eje Y
+            plnEjeY_Resultado.Points.Clear();
+            plnEjeY_Resultado.Points.Add(new Point((-señalResultado.TiempoInicial) * scrContenedor_Resultado.Width, 0));
+            plnEjeY_Resultado.Points.Add(new Point((-señalResultado.TiempoInicial) * scrContenedor_Resultado.Width, scrContenedor_Resultado.Height));
         }
     }
 }
